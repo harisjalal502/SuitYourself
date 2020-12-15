@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+{% load static %}			
+<div class="card col-md-8 mx-auto" style="margin-top: 10%; text-align:center;">
+	<div class="card-body col-md-10 mx-auto">
+		<h1 style="margin-bottom: 20px;">
+			<img src="{% static '/small_logo.jpg' %}" alt="" style="height: 24pt; display: inline-block;">
+		</h1>
+		
+
+		{% if form.errors %}
+			<p class="text-danger">Your username and password didn't match. Please try again.</p>
+		{% endif %}
+
+		<form method="post">
+			{% csrf_token %}
+	
+			<div class="form-group">
+				<input class="form-control" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}" placeholder="Username" autofocus="" required="" type="text" />
+			</div>
+
+			<div class="form-group">
+				<input type="password" class="form-control" id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}" placeholder="Password" required=""/>
+			</div>
+	
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+			<input type="hidden" name="next" value="{{ next }}">
+		</form>
+		<div>
+			<p>Don't have an account? Sign up <a href="/signup">here</a></p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

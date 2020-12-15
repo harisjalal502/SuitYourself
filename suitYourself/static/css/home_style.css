@@ -1,0 +1,43 @@
+.content {
+	margin: auto;
+}
+body {
+	background-color: #1a1a1a;
+}
+
+h2 {
+	color: #FFF; 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+p {
+	color: #FFF; 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+ul li {
+	color: #FFF; 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	word-wrap: break-word;
+	width: 350px; 
+}
+
+#welcomemessage {
+	float: left;
+	position: fixed;
+	
+}
+
+#uploadform {
+	float: left;
+	top: 100px;
+	position: fixed;
+	
+}
+
+#photolist {
+	padding-right: 200px;
+	float: right;
+	background-color: #333;
+	
+}

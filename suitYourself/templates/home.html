@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+{% if user.is_authenticated %}
+		<!-- List of uploaded documents -->
+		{% include 'images_list.html' %}
+
+		<hr>
+
+		<!-- Upload form. Note enctype attribute! -->
+		<div style="margin-top: 20px;">
+			<h2>Upload New Item</h2>
+		</div>
+			
+		<div id="uploadform">
+			<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<p>{{ form.non_field_errors }}</p>
+				<p>{{ form.uploadfile.label_tag }}  {{ form.uploadfile.errors }} {{ form.uploadfile }}</p>
+				<p>Title of listing: {{ form.title }}</p>
+				<p>Item size: {{ form.size }}</p>
+				<p>Rental price: ${{ form.price }} per week</p>
+				<p>Description:</p>
+				<p>{{ form.description }}</p>
+				<p><input type="submit" value="Upload" /></p>
+			</form>
+		</div>
+
+{% else %}
+		<style>
+		body{
+			background-image: url("{% static '/2.jpg' %}");
+		}
+		</style>
+
+{% endif %}
+
+{% endblock %}

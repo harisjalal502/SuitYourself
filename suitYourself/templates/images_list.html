@@ -1,0 +1,25 @@
+<div style="margin-top: 20px;">
+    <h2>Items</h2>
+</div>
+
+
+<div id="photolist" class="">
+    {% if uploads %}
+            <ul>
+            {% for upload in uploads %}
+                <li>
+                    <h4>{{ upload.title }}</h4>
+                    <a target="_blank" href="{{ upload.uploadfile.url }}">
+                    <img display='block' width='300px' height='auto' src="{{ upload.uploadfile.url }}" alt="{{ upload.uploadfile.name }}"></a><br> 
+                    <p>Size: {{ upload.size }}</p>
+                    <p>Price: ${{ upload.price }} per week</p>
+                    <p>{{ upload.description }}</p>
+                    <a href="{% url 'delete_post' upload.id %}"><button>Delete post</button></a>
+                </li>
+            {% endfor %}
+            </ul>
+    {% else %}
+            <p>No documents.</p>
+    {% endif %}
+</div>
+

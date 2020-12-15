@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} FAQs {% endblock %}
+
+{% block content %}
+
+<div id="accordion" style="margin-top: 20px;">
+    <h2>FAQ</h2>
+
+    <div class="card">
+        <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+            How do I upload an item?
+        </a>
+        </div>
+        <div id="collapseOne" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+			To upload an item for people to rent, simply choose an image of your item, fill out all the other fields such as its title, size, rental price, and description, then click the upload button. Please be descriptive but brief in your title, and include details such as color, brand, and wear condition in your description.
+        </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+            How do I delete an item?
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+			To delete a posted item, simply click the "Delete post" button under that item.
+        </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            How do I sign up?
+        </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+			To sign up for a Suit Yourself account, click the "Sign up here" link on the login screen. Fill out the necessary forms and confirm your password, then you will be logged in and redirected to the home screen where you can view posts! Make sure you choose a strong password that is at least 8 characters.
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
